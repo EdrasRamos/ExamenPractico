@@ -1,0 +1,84 @@
+<%- include ('partials/header'); -%>
+
+<div class="container ml-2">
+    <div class="row mt-5">
+        <div class="col-md-9">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                    
+                    <th>DPI</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                  
+                    <th>NIT</th>
+                  
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>email</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <% if (data) { %>
+                         <% for( var i = 0; i < data.length; i++ ) { %>
+                            <tr>
+                               
+                                <td><%= data[i].dpi %> </td>
+                                <td><%= data[i].nombres %> </td>
+                                <td><%= data[i].apellidos %> </td>
+                                
+                                <td><%= data[i].nit %> </td>
+                              
+                                <td><%= data[i].direccion %> </td>
+                                <td><%= data[i].telefono %> </td>
+                                <td><%= data[i].email %> </td>
+                                <td>
+                                    <a href="/delete/<%= data[i].Id %>" class="btn btn-danger">Borrar</a>
+                            </tr>
+                         <% } %>
+                        <% } %> 
+                </tbody>
+            </table>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <form action="/add" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="dpi" placeholder="DPI" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="nombres" placeholder="Nombres" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="apellidos" placeholder="Apellidos" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="fecha_nacimiento" placeholder ="Fecha de Nacimiento"class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="nit" placeholder="NIT" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="sexo" placeholder="Sexo" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="direccion" placeholder="Dirección" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="telefono" placeholder="Teléfono" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" placeholder="Email" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary"> Guardar Datos</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<%- include ('partials/footer'); -%>

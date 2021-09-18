@@ -1,0 +1,51 @@
+<%- include ('partials/header'); -%>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card body">
+                    <form action="/update" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="dpi" value="<%= data.dpi %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="nombres" value="<%= data.nombres %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="apellidos" value="<%= data.apellidos %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="fecha_nacimiento" value="<%= data.fecha_nacimiento %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="nit" value="<%= data.nit %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="sexo"  value="<%= data.sexo %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="direccion" value="<%= data.direccion %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="telefono" value="<%= data.telefono %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" value="<%= data.email %>" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary"> Actualizar Datos</button>
+                    </form>
+                </div>
+
+    </div>
+    </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<%- include ('partials/footer'); -%>
